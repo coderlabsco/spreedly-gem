@@ -270,7 +270,7 @@ module Spreedly
         add_to_doc(doc, options, :data, :retained, :email)
         doc.credit_card do
           add_to_doc(doc, options, :number, :verification_value, :month, :full_name, :first_name, :last_name,
-                     :year, :address1, :address2, :city, :state, :zip, :country, :phone_number,
+                     :year, :address1, :address2, :city, :state, :zip, :country, :phone_number, :metadata,
                      :company, :eligible_for_card_updater)
         end
       end
@@ -279,7 +279,7 @@ module Spreedly
     def update_credit_card_body(options)
       build_xml_request('payment_method') do |doc|
         add_to_doc(doc, options, :email, :month, :full_name, :first_name, :last_name, :year,
-                   :address1, :address2, :city, :state, :zip, :country, :phone_number,
+                   :address1, :address2, :city, :state, :zip, :country, :phone_number, :metadata,
                    :eligible_for_card_updater)
       end
     end
