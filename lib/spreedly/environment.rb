@@ -103,8 +103,8 @@ module Spreedly
       Transaction.new_list_from(xml_doc)
     end
 
-    def list_payment_methods(since_token = nil)
-      xml_doc = ssl_get(list_payment_methods_url(since_token), headers)
+    def list_payment_methods(since_token = nil, options = {})
+      xml_doc = ssl_get(list_payment_methods_url(since_token, options), headers)
       PaymentMethod.new_list_from(xml_doc)
     end
 
